@@ -11,7 +11,7 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        |         |
+|   1 | Cung Đức Anh | 2A202603814 | 26ai.anhcd2@vinuni.edu.vn | cungducanh2712 | Single Agent (Shape B) |
 |   2 |        |      |       |        |         |
 
 Gợi ý chia vai:
@@ -25,7 +25,7 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| | | | |
+| Cung Đức Anh | Single Agent | 7607db4 | tests/test_public_matrix.py (T01-T14 single shape) |
 
 ## Cá nhân
 
@@ -39,15 +39,17 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 Sao chép mục dưới đây cho từng thành viên.
 
-## MSSV_HoTen
+## 2A202603814_CungDucAnh
 
 ### Phần việc phụ trách
 
--
+- Shape B: Single ReAct Agent (`src/lab8/shapes/single.py`).
 
 ### Đóng góp cụ thể
 
--
+- Triển khai `run_claim` cho Single Agent với vòng lặp ReAct `max_steps=8` và worker read-only tools.
+- Đảm bảo ranh giới an toàn cho host: idempotency, crash resilience, canary secret isolation.
+- Vượt qua 62/62 test student, đạt 20/20 crash safety và pass rate 1.000 trên toàn bộ seeds.
 
 ### Bằng chứng
 
