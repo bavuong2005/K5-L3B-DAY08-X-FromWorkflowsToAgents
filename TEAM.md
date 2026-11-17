@@ -25,7 +25,7 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| | | | |
+| thanhanbk02 | workflow | bac2ac4 | test_workflow_ignores_ticket_delay_on_the_swarm_weak_seed; test_workflow_keeps_the_full_quote_when_the_host_pays_the_difference; test_workflow_lets_the_injected_crash_escape_and_retries_once |
 
 ## Cá nhân
 
