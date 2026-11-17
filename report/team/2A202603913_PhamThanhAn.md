@@ -4,7 +4,7 @@
 
 - Họ tên: Phạm Thanh An
 - MSSV: 2A202603913
-- Email: anptbk02@gmail.com
+- Email: 26ai.anpt3@vinuni.edu.vn
 - GitHub: thanhanbk02
 
 ## 2. Phần việc phụ trách
