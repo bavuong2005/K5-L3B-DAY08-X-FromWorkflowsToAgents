@@ -1,0 +1,1222 @@
+{
+  "topic": "B1",
+  "latency_model": "bonus/latency.yaml",
+  "claims": 14,
+  "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "trials": 70,
+  "statuses_match": true,
+  "per_shape": {
+    "orchestrator": {
+      "mean_ms": 480.984,
+      "p95_ms": 542.672,
+      "min_ms": 336.446,
+      "max_ms": 555.738
+    },
+    "orchestrator_parallel": {
+      "mean_ms": 435.065,
+      "p95_ms": 499.8,
+      "min_ms": 315.485,
+      "max_ms": 503.721
+    }
+  },
+  "speedup_mean": 1.1055,
+  "amdahl_predicted_mean_speedup": 1.1079,
+  "trials_detail": [
+    {
+      "claim_id": "C-001",
+      "seed": 11,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 461.943
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 442.472
+      },
+      "statuses_match": true,
+      "speedup": 1.044,
+      "amdahl_predicted_speedup": 1.1104
+    },
+    {
+      "claim_id": "C-001",
+      "seed": 22,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 513.854
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 419.233
+      },
+      "statuses_match": true,
+      "speedup": 1.2257,
+      "amdahl_predicted_speedup": 1.1225
+    },
+    {
+      "claim_id": "C-001",
+      "seed": 33,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 499.143
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 428.005
+      },
+      "statuses_match": true,
+      "speedup": 1.1662,
+      "amdahl_predicted_speedup": 1.1188
+    },
+    {
+      "claim_id": "C-001",
+      "seed": 44,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 473.967
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 492.024
+      },
+      "statuses_match": true,
+      "speedup": 0.9633,
+      "amdahl_predicted_speedup": 1.1019
+    },
+    {
+      "claim_id": "C-001",
+      "seed": 55,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 530.638
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 442.12
+      },
+      "statuses_match": true,
+      "speedup": 1.2002,
+      "amdahl_predicted_speedup": 1.1186
+    },
+    {
+      "claim_id": "C-002",
+      "seed": 11,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 471.834
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 437.792
+      },
+      "statuses_match": true,
+      "speedup": 1.0778,
+      "amdahl_predicted_speedup": 1.1245
+    },
+    {
+      "claim_id": "C-002",
+      "seed": 22,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 472.723
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 405.927
+      },
+      "statuses_match": true,
+      "speedup": 1.1646,
+      "amdahl_predicted_speedup": 1.1306
+    },
+    {
+      "claim_id": "C-002",
+      "seed": 33,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 477.724
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 390.796
+      },
+      "statuses_match": true,
+      "speedup": 1.2224,
+      "amdahl_predicted_speedup": 1.1283
+    },
+    {
+      "claim_id": "C-002",
+      "seed": 44,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 444.979
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 416.539
+      },
+      "statuses_match": true,
+      "speedup": 1.0683,
+      "amdahl_predicted_speedup": 1.119
+    },
+    {
+      "claim_id": "C-002",
+      "seed": 55,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 475.007
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 427.088
+      },
+      "statuses_match": true,
+      "speedup": 1.1122,
+      "amdahl_predicted_speedup": 1.1044
+    },
+    {
+      "claim_id": "C-003",
+      "seed": 11,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 529.721
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 479.5
+      },
+      "statuses_match": true,
+      "speedup": 1.1047,
+      "amdahl_predicted_speedup": 1.115
+    },
+    {
+      "claim_id": "C-003",
+      "seed": 22,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 467.318
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 401.337
+      },
+      "statuses_match": true,
+      "speedup": 1.1644,
+      "amdahl_predicted_speedup": 1.1182
+    },
+    {
+      "claim_id": "C-003",
+      "seed": 33,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 500.862
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 455.015
+      },
+      "statuses_match": true,
+      "speedup": 1.1008,
+      "amdahl_predicted_speedup": 1.1054
+    },
+    {
+      "claim_id": "C-003",
+      "seed": 44,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 462.956
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 394.867
+      },
+      "statuses_match": true,
+      "speedup": 1.1724,
+      "amdahl_predicted_speedup": 1.1259
+    },
+    {
+      "claim_id": "C-003",
+      "seed": 55,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 465.487
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 468.946
+      },
+      "statuses_match": true,
+      "speedup": 0.9926,
+      "amdahl_predicted_speedup": 1.1057
+    },
+    {
+      "claim_id": "C-004",
+      "seed": 11,
+      "orchestrator": {
+        "status": "needs_info",
+        "proposal_amount": 0,
+        "critical_path_ms": 387.016
+      },
+      "orchestrator_parallel": {
+        "status": "needs_info",
+        "proposal_amount": 0,
+        "critical_path_ms": 411.093
+      },
+      "statuses_match": true,
+      "speedup": 0.9414,
+      "amdahl_predicted_speedup": 1.0
+    },
+    {
+      "claim_id": "C-004",
+      "seed": 22,
+      "orchestrator": {
+        "status": "needs_info",
+        "proposal_amount": 0,
+        "critical_path_ms": 400.729
+      },
+      "orchestrator_parallel": {
+        "status": "needs_info",
+        "proposal_amount": 0,
+        "critical_path_ms": 359.426
+      },
+      "statuses_match": true,
+      "speedup": 1.1149,
+      "amdahl_predicted_speedup": 1.0
+    },
+    {
+      "claim_id": "C-004",
+      "seed": 33,
+      "orchestrator": {
+        "status": "needs_info",
+        "proposal_amount": 0,
+        "critical_path_ms": 336.446
+      },
+      "orchestrator_parallel": {
+        "status": "needs_info",
+        "proposal_amount": 0,
+        "critical_path_ms": 315.485
+      },
+      "statuses_match": true,
+      "speedup": 1.0664,
+      "amdahl_predicted_speedup": 1.0
+    },
+    {
+      "claim_id": "C-004",
+      "seed": 44,
+      "orchestrator": {
+        "status": "needs_info",
+        "proposal_amount": 0,
+        "critical_path_ms": 386.691
+      },
+      "orchestrator_parallel": {
+        "status": "needs_info",
+        "proposal_amount": 0,
+        "critical_path_ms": 371.368
+      },
+      "statuses_match": true,
+      "speedup": 1.0413,
+      "amdahl_predicted_speedup": 1.0
+    },
+    {
+      "claim_id": "C-004",
+      "seed": 55,
+      "orchestrator": {
+        "status": "needs_info",
+        "proposal_amount": 0,
+        "critical_path_ms": 355.142
+      },
+      "orchestrator_parallel": {
+        "status": "needs_info",
+        "proposal_amount": 0,
+        "critical_path_ms": 384.189
+      },
+      "statuses_match": true,
+      "speedup": 0.9244,
+      "amdahl_predicted_speedup": 1.0
+    },
+    {
+      "claim_id": "C-005",
+      "seed": 11,
+      "orchestrator": {
+        "status": "escalated",
+        "proposal_amount": 0,
+        "critical_path_ms": 469.283
+      },
+      "orchestrator_parallel": {
+        "status": "escalated",
+        "proposal_amount": 0,
+        "critical_path_ms": 384.07
+      },
+      "statuses_match": true,
+      "speedup": 1.2219,
+      "amdahl_predicted_speedup": 1.1356
+    },
+    {
+      "claim_id": "C-005",
+      "seed": 22,
+      "orchestrator": {
+        "status": "escalated",
+        "proposal_amount": 0,
+        "critical_path_ms": 413.511
+      },
+      "orchestrator_parallel": {
+        "status": "escalated",
+        "proposal_amount": 0,
+        "critical_path_ms": 429.609
+      },
+      "statuses_match": true,
+      "speedup": 0.9625,
+      "amdahl_predicted_speedup": 1.1183
+    },
+    {
+      "claim_id": "C-005",
+      "seed": 33,
+      "orchestrator": {
+        "status": "escalated",
+        "proposal_amount": 0,
+        "critical_path_ms": 400.62
+      },
+      "orchestrator_parallel": {
+        "status": "escalated",
+        "proposal_amount": 0,
+        "critical_path_ms": 384.795
+      },
+      "statuses_match": true,
+      "speedup": 1.0411,
+      "amdahl_predicted_speedup": 1.1293
+    },
+    {
+      "claim_id": "C-005",
+      "seed": 44,
+      "orchestrator": {
+        "status": "escalated",
+        "proposal_amount": 0,
+        "critical_path_ms": 390.618
+      },
+      "orchestrator_parallel": {
+        "status": "escalated",
+        "proposal_amount": 0,
+        "critical_path_ms": 381.321
+      },
+      "statuses_match": true,
+      "speedup": 1.0244,
+      "amdahl_predicted_speedup": 1.1337
+    },
+    {
+      "claim_id": "C-005",
+      "seed": 55,
+      "orchestrator": {
+        "status": "escalated",
+        "proposal_amount": 0,
+        "critical_path_ms": 434.073
+      },
+      "orchestrator_parallel": {
+        "status": "escalated",
+        "proposal_amount": 0,
+        "critical_path_ms": 389.854
+      },
+      "statuses_match": true,
+      "speedup": 1.1134,
+      "amdahl_predicted_speedup": 1.1321
+    },
+    {
+      "claim_id": "C-006",
+      "seed": 11,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 430.292
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 437.065
+      },
+      "statuses_match": true,
+      "speedup": 0.9845,
+      "amdahl_predicted_speedup": 1.1066
+    },
+    {
+      "claim_id": "C-006",
+      "seed": 22,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 425.14
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 433.48
+      },
+      "statuses_match": true,
+      "speedup": 0.9808,
+      "amdahl_predicted_speedup": 1.1137
+    },
+    {
+      "claim_id": "C-006",
+      "seed": 33,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 508.532
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 391.258
+      },
+      "statuses_match": true,
+      "speedup": 1.2997,
+      "amdahl_predicted_speedup": 1.1358
+    },
+    {
+      "claim_id": "C-006",
+      "seed": 44,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 483.281
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 399.865
+      },
+      "statuses_match": true,
+      "speedup": 1.2086,
+      "amdahl_predicted_speedup": 1.1222
+    },
+    {
+      "claim_id": "C-006",
+      "seed": 55,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 506.235
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 466.034
+      },
+      "statuses_match": true,
+      "speedup": 1.0863,
+      "amdahl_predicted_speedup": 1.1043
+    },
+    {
+      "claim_id": "C-007",
+      "seed": 11,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 432.023
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 497.693
+      },
+      "statuses_match": true,
+      "speedup": 0.8681,
+      "amdahl_predicted_speedup": 1.1006
+    },
+    {
+      "claim_id": "C-007",
+      "seed": 22,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 540.59
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 499.804
+      },
+      "statuses_match": true,
+      "speedup": 1.0816,
+      "amdahl_predicted_speedup": 1.105
+    },
+    {
+      "claim_id": "C-007",
+      "seed": 33,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 518.766
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 445.771
+      },
+      "statuses_match": true,
+      "speedup": 1.1637,
+      "amdahl_predicted_speedup": 1.1227
+    },
+    {
+      "claim_id": "C-007",
+      "seed": 44,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 539.491
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 446.809
+      },
+      "statuses_match": true,
+      "speedup": 1.2074,
+      "amdahl_predicted_speedup": 1.1223
+    },
+    {
+      "claim_id": "C-007",
+      "seed": 55,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 441.725
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 463.254
+      },
+      "statuses_match": true,
+      "speedup": 0.9535,
+      "amdahl_predicted_speedup": 1.1103
+    },
+    {
+      "claim_id": "C-008",
+      "seed": 11,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 445.471
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 495.42
+      },
+      "statuses_match": true,
+      "speedup": 0.8992,
+      "amdahl_predicted_speedup": 1.1032
+    },
+    {
+      "claim_id": "C-008",
+      "seed": 22,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 521.075
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 413.489
+      },
+      "statuses_match": true,
+      "speedup": 1.2602,
+      "amdahl_predicted_speedup": 1.1233
+    },
+    {
+      "claim_id": "C-008",
+      "seed": 33,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 479.501
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 450.738
+      },
+      "statuses_match": true,
+      "speedup": 1.0638,
+      "amdahl_predicted_speedup": 1.1135
+    },
+    {
+      "claim_id": "C-008",
+      "seed": 44,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 523.113
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 404.729
+      },
+      "statuses_match": true,
+      "speedup": 1.2925,
+      "amdahl_predicted_speedup": 1.1254
+    },
+    {
+      "claim_id": "C-008",
+      "seed": 55,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 448.926
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 478.655
+      },
+      "statuses_match": true,
+      "speedup": 0.9379,
+      "amdahl_predicted_speedup": 1.115
+    },
+    {
+      "claim_id": "C-009",
+      "seed": 11,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 473.642
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 398.728
+      },
+      "statuses_match": true,
+      "speedup": 1.1879,
+      "amdahl_predicted_speedup": 1.1341
+    },
+    {
+      "claim_id": "C-009",
+      "seed": 22,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 503.568
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 476.762
+      },
+      "statuses_match": true,
+      "speedup": 1.0562,
+      "amdahl_predicted_speedup": 1.1122
+    },
+    {
+      "claim_id": "C-009",
+      "seed": 33,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 464.895
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 416.595
+      },
+      "statuses_match": true,
+      "speedup": 1.1159,
+      "amdahl_predicted_speedup": 1.1218
+    },
+    {
+      "claim_id": "C-009",
+      "seed": 44,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 527.322
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 418.361
+      },
+      "statuses_match": true,
+      "speedup": 1.2604,
+      "amdahl_predicted_speedup": 1.1149
+    },
+    {
+      "claim_id": "C-009",
+      "seed": 55,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 508.29
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 0,
+        "critical_path_ms": 447.183
+      },
+      "statuses_match": true,
+      "speedup": 1.1366,
+      "amdahl_predicted_speedup": 1.1053
+    },
+    {
+      "claim_id": "C-010",
+      "seed": 11,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 484.153
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 424.05
+      },
+      "statuses_match": true,
+      "speedup": 1.1417,
+      "amdahl_predicted_speedup": 1.1103
+    },
+    {
+      "claim_id": "C-010",
+      "seed": 22,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 533.995
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 404.821
+      },
+      "statuses_match": true,
+      "speedup": 1.3191,
+      "amdahl_predicted_speedup": 1.1151
+    },
+    {
+      "claim_id": "C-010",
+      "seed": 33,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 542.861
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 503.721
+      },
+      "statuses_match": true,
+      "speedup": 1.0777,
+      "amdahl_predicted_speedup": 1.1085
+    },
+    {
+      "claim_id": "C-010",
+      "seed": 44,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 463.375
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 429.457
+      },
+      "statuses_match": true,
+      "speedup": 1.079,
+      "amdahl_predicted_speedup": 1.1111
+    },
+    {
+      "claim_id": "C-010",
+      "seed": 55,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 538.889
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 493.149
+      },
+      "statuses_match": true,
+      "speedup": 1.0928,
+      "amdahl_predicted_speedup": 1.0923
+    },
+    {
+      "claim_id": "C-011",
+      "seed": 11,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 536.955
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 441.842
+      },
+      "statuses_match": true,
+      "speedup": 1.2153,
+      "amdahl_predicted_speedup": 1.1149
+    },
+    {
+      "claim_id": "C-011",
+      "seed": 22,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 487.601
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 452.291
+      },
+      "statuses_match": true,
+      "speedup": 1.0781,
+      "amdahl_predicted_speedup": 1.1107
+    },
+    {
+      "claim_id": "C-011",
+      "seed": 33,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 509.879
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 501.015
+      },
+      "statuses_match": true,
+      "speedup": 1.0177,
+      "amdahl_predicted_speedup": 1.0985
+    },
+    {
+      "claim_id": "C-011",
+      "seed": 44,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 527.244
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 499.8
+      },
+      "statuses_match": true,
+      "speedup": 1.0549,
+      "amdahl_predicted_speedup": 1.1005
+    },
+    {
+      "claim_id": "C-011",
+      "seed": 55,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 537.875
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 493.224
+      },
+      "statuses_match": true,
+      "speedup": 1.0905,
+      "amdahl_predicted_speedup": 1.0927
+    },
+    {
+      "claim_id": "C-012",
+      "seed": 11,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 444.735
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 439.629
+      },
+      "statuses_match": true,
+      "speedup": 1.0116,
+      "amdahl_predicted_speedup": 1.1172
+    },
+    {
+      "claim_id": "C-012",
+      "seed": 22,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 495.518
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 404.576
+      },
+      "statuses_match": true,
+      "speedup": 1.2248,
+      "amdahl_predicted_speedup": 1.131
+    },
+    {
+      "claim_id": "C-012",
+      "seed": 33,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 520.403
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 404.605
+      },
+      "statuses_match": true,
+      "speedup": 1.2862,
+      "amdahl_predicted_speedup": 1.1362
+    },
+    {
+      "claim_id": "C-012",
+      "seed": 44,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 527.026
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 399.123
+      },
+      "statuses_match": true,
+      "speedup": 1.3205,
+      "amdahl_predicted_speedup": 1.1233
+    },
+    {
+      "claim_id": "C-012",
+      "seed": 55,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 524.671
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 35000,
+        "critical_path_ms": 480.101
+      },
+      "statuses_match": true,
+      "speedup": 1.0928,
+      "amdahl_predicted_speedup": 1.1016
+    },
+    {
+      "claim_id": "C-013",
+      "seed": 11,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 456.807
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 428.191
+      },
+      "statuses_match": true,
+      "speedup": 1.0668,
+      "amdahl_predicted_speedup": 1.1256
+    },
+    {
+      "claim_id": "C-013",
+      "seed": 22,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 532.744
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 442.802
+      },
+      "statuses_match": true,
+      "speedup": 1.2031,
+      "amdahl_predicted_speedup": 1.1226
+    },
+    {
+      "claim_id": "C-013",
+      "seed": 33,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 555.738
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 480.976
+      },
+      "statuses_match": true,
+      "speedup": 1.1554,
+      "amdahl_predicted_speedup": 1.1031
+    },
+    {
+      "claim_id": "C-013",
+      "seed": 44,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 510.855
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 441.711
+      },
+      "statuses_match": true,
+      "speedup": 1.1565,
+      "amdahl_predicted_speedup": 1.1263
+    },
+    {
+      "claim_id": "C-013",
+      "seed": 55,
+      "orchestrator": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 453.498
+      },
+      "orchestrator_parallel": {
+        "status": "denied",
+        "proposal_amount": 35000,
+        "critical_path_ms": 460.47
+      },
+      "statuses_match": true,
+      "speedup": 0.9849,
+      "amdahl_predicted_speedup": 1.1204
+    },
+    {
+      "claim_id": "C-014",
+      "seed": 11,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 542.672
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 412.832
+      },
+      "statuses_match": true,
+      "speedup": 1.3145,
+      "amdahl_predicted_speedup": 1.1238
+    },
+    {
+      "claim_id": "C-014",
+      "seed": 22,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 490.641
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 412.405
+      },
+      "statuses_match": true,
+      "speedup": 1.1897,
+      "amdahl_predicted_speedup": 1.1205
+    },
+    {
+      "claim_id": "C-014",
+      "seed": 33,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 470.875
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 498.426
+      },
+      "statuses_match": true,
+      "speedup": 0.9447,
+      "amdahl_predicted_speedup": 1.1101
+    },
+    {
+      "claim_id": "C-014",
+      "seed": 44,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 552.975
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 447.648
+      },
+      "statuses_match": true,
+      "speedup": 1.2353,
+      "amdahl_predicted_speedup": 1.1131
+    },
+    {
+      "claim_id": "C-014",
+      "seed": 55,
+      "orchestrator": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 482.741
+      },
+      "orchestrator_parallel": {
+        "status": "resolved",
+        "proposal_amount": 150000,
+        "critical_path_ms": 463.123
+      },
+      "statuses_match": true,
+      "speedup": 1.0424,
+      "amdahl_predicted_speedup": 1.114
+    }
+  ]
+}

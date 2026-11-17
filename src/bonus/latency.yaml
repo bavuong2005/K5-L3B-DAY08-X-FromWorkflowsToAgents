@@ -1,0 +1,13 @@
+# Bonus B1 — simulated latency model, milliseconds. Not a measurement.
+# MockLLM reports latency as unavailable, so the sequential vs parallel
+# comparison uses this model. Jitter is deterministic per (seed, shape, claim,
+# node): same inputs give the same number on every machine.
+node_ms:
+  get_claim_view: 12
+  lookup_order: 30
+  lookup_policy: 25
+  lookup_refund_history: 20
+  compute_compensation: 40
+  draft_model: 350
+  issue_refund: 15
+jitter_pct: 15
