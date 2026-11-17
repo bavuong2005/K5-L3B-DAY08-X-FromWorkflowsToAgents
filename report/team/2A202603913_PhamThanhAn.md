@@ -50,7 +50,7 @@ Lệnh đã chạy trong `src/` với Python 3.13.17:
 
 ## 5. Công cụ AI đã dùng
 
-Cursor (Grok) được dùng để đọc đề, viết `workflow.py`, viết `src/tests/test_workflow_shape.py`, và soạn báo cáo này.
+Cursor (Grok) được dùng để đọc đề, viết `workflow.py`, viết `src/tests/test_workflow_shape.py`.
 
 Tự kiểm bằng pytest ở mục 4, không dùng số benchmark. Cổng host và bộ student của workflow đều xanh sau khi sửa.
 
