@@ -33,7 +33,7 @@ Quyết định kỹ thuật:
 
 ## 4. Bằng chứng
 
-Commit `bac2ac4` trên nhánh `main` của máy local. Chưa push trong phiên làm việc này.
+Commit `bac2ac4` nằm trên `main` của repo nhóm (merge hiện có ở `origin/main`, commit tích hợp `6bb14ae`). Sau khi nhóm tích hợp các shape, lần kiểm tra chung cho kết quả `python -m pytest -q` → 62 passed, 248 deselected và student matrix → 248 passed, 62 deselected.
 
 Run id của các lần tự kiểm:
 
@@ -46,7 +46,7 @@ Lệnh đã chạy trong `src/` với Python 3.13.17:
 - `python -m pytest -q -m student -o addopts= -k workflow` → 62 passed.
 - `python -m pytest -q -m student -o addopts= -k "workflow and (t11 or t12)"` → 2 passed.
 - `python -m pytest -q tests/test_workflow_shape.py` → 3 passed.
-- `python -m pytest -q` → 57 passed, 248 deselected.
+- Lần chạy trước khi tích hợp Khánh, `python -m pytest -q` → 57 passed, 248 deselected.
 
 ## 5. Công cụ AI đã dùng
 
