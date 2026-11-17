@@ -29,8 +29,14 @@ ones. `lab8.trace.Trace` does this; your own tracer is fine if it matches.
 
 from __future__ import annotations
 
-from lab8.schemas import RunResult
-from lab8.shapes.common import not_implemented
+import sqlite3
+
+from lab8.db import connect
+from lab8.durability import InjectedCrash, issue_refund
+from lab8.schemas import Budget, RunResult, make_run_id
+from lab8.shapes.common import finish, safe_dump
+from lab8.tools import ORDER_FIELDS, compute_compensation, get_claim_view, lookup_order, tool_cost
+from lab8.trace import Trace
 
 
 def run_claim(
@@ -40,7 +46,207 @@ def run_claim(
     store_path: str,
     crash_at: str | None = None,
 ) -> RunResult:
-    # TODO CP2 (student): thay stub này bằng shape workflow theo các bước ở docstring đầu file.
-    # TODO CP3 (student): truyền crash_at vào durability.issue_refund, không bắt InjectedCrash.
-    del store_path, crash_at
-    return not_implemented("workflow", claim_id, seed)
+    try:
+        conn = connect(store_path)
+    except Exception:
+        return _failed_without_store(claim_id, seed, "store_unavailable")
+    try:
+        return _run(conn, claim_id, seed=seed, crash_at=crash_at)
+    except InjectedCrash:
+        raise
+    except Exception:
+        return _failed(conn, claim_id, seed, "internal_error")
+    finally:
+        conn.close()
+
+
+def _run(
+    conn: sqlite3.Connection,
+    claim_id: str,
+    *,
+    seed: int,
+    crash_at: str | None,
+) -> RunResult:
+    budget = Budget()
+    run_id = make_run_id("workflow", claim_id, seed)
+    trace = Trace(run_id)
+
+    budget.add_tool(tool_cost())
+    claim = get_claim_view(conn, claim_id)
+    trace.add("claim", _claim_trace(claim))
+    if not claim.get("found"):
+        return _done(
+            conn,
+            claim_id,
+            seed,
+            status="failed",
+            proposal_amount=0,
+            budget=budget,
+            trace=trace,
+            error_reason="unknown_claim",
+        )
+
+    order_id = claim.get("order_id")
+    if not order_id:
+        trace.add("decision", {"status": "needs_info"})
+        return _done(
+            conn,
+            claim_id,
+            seed,
+            status="needs_info",
+            proposal_amount=0,
+            budget=budget,
+            trace=trace,
+            error_reason="missing_order_id",
+        )
+
+    budget.add_tool(tool_cost())
+    order_view = lookup_order(conn, order_id, claim["principal_id"])
+    trace.add("lookup_order", _order_trace(order_view))
+    if not order_view.get("visible"):
+        trace.add("decision", {"status": "escalated"})
+        return _done(
+            conn,
+            claim_id,
+            seed,
+            status="escalated",
+            proposal_amount=0,
+            budget=budget,
+            trace=trace,
+            error_reason=order_view.get("reason"),
+        )
+
+    budget.add_tool(tool_cost())
+    quote = compute_compensation(conn, order_view["order"])
+    proposal = int(quote["amount_vnd"])
+    trace.add("quote", safe_dump(quote))
+
+    if proposal <= 0:
+        trace.add("decision", {"status": "denied"})
+        return _done(
+            conn,
+            claim_id,
+            seed,
+            status="denied",
+            proposal_amount=0,
+            budget=budget,
+            trace=trace,
+            error_reason=quote.get("reason"),
+        )
+
+    outcome = issue_refund(conn, claim_id, proposal, crash_at=crash_at)
+    trace.add(
+        "issue_refund",
+        {"ok": bool(outcome["ok"]), "reason": outcome.get("reason"), "conflict": bool(outcome["conflict"])},
+    )
+    if not outcome["ok"]:
+        status = "failed" if outcome["conflict"] else "denied"
+        trace.add("decision", {"status": status})
+        return _done(
+            conn,
+            claim_id,
+            seed,
+            status=status,
+            proposal_amount=proposal,
+            budget=budget,
+            trace=trace,
+            error_reason=outcome.get("reason"),
+        )
+
+    trace.add("decision", {"status": "resolved"})
+    return _done(
+        conn,
+        claim_id,
+        seed,
+        status="resolved",
+        proposal_amount=proposal,
+        budget=budget,
+        trace=trace,
+        error_reason=None,
+    )
+
+
+def _done(
+    conn: sqlite3.Connection,
+    claim_id: str,
+    seed: int,
+    *,
+    status: str,
+    proposal_amount: int,
+    budget: Budget,
+    trace: Trace,
+    error_reason: str | None,
+) -> RunResult:
+    return finish(
+        conn,
+        shape="workflow",
+        claim_id=claim_id,
+        seed=seed,
+        status=status,
+        proposal_amount=proposal_amount,
+        budget=budget,
+        trace=trace,
+        error_reason=error_reason,
+    )
+
+
+def _failed(conn: sqlite3.Connection, claim_id: str, seed: int, reason: str) -> RunResult:
+    trace = Trace(make_run_id("workflow", claim_id, seed))
+    trace.add("error", {"reason": reason})
+    return _done(
+        conn,
+        claim_id,
+        seed,
+        status="failed",
+        proposal_amount=0,
+        budget=Budget(),
+        trace=trace,
+        error_reason=reason,
+    )
+
+
+def _failed_without_store(claim_id: str, seed: int, reason: str) -> RunResult:
+    run_id = make_run_id("workflow", claim_id, seed)
+    trace = Trace(run_id)
+    trace.add("error", {"reason": reason})
+    return RunResult(
+        run_id=run_id,
+        claim_id=claim_id,
+        shape="workflow",
+        seed=seed,
+        status="failed",
+        proposal_amount=0,
+        refund_effects=[],
+        committed_audit_count=0,
+        model_calls=0,
+        tool_calls=0,
+        input_tokens=0,
+        output_tokens=0,
+        cost_estimate=0.0,
+        trace_path=trace.write(),
+        error_reason=reason,
+    )
+
+
+def _claim_trace(claim: dict) -> dict:
+    if not claim.get("found"):
+        return {"found": False, "claim_id": claim.get("claim_id")}
+    return {
+        "found": True,
+        "claim_id": claim.get("claim_id"),
+        "order_id": claim.get("order_id"),
+    }
+
+
+def _order_trace(view: dict) -> dict:
+    if not view.get("visible"):
+        payload = {"visible": False, "reason": view.get("reason")}
+        if view.get("order_id"):
+            payload["order_id"] = view.get("order_id")
+        return payload
+    order = view.get("order") or {}
+    return {
+        "visible": True,
+        "reason": view.get("reason"),
+        "order": {key: order.get(key) for key in ORDER_FIELDS},
+    }
